@@ -25,8 +25,9 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/
           mkdir ./Download
+          cd ./Download
           wget -U "Mozilla/5.0" ${{ github.event.inputs.ROM_URL }} -O "$GITHUB_WORKSPACE/Download/${{ github.event.inputs.ZIP_NAME }}"
-          echo "zip_file: $(ls "$GITHUB_WORKSPACE/Download/")" >> $GITHUB_WORKSPACE/Download/1.txt
+          echo "zip_file: $(ls "$GITHUB_WORKSPACE/Download/")"
           
       - name: Upload to Release‌‌...
         uses: ncipollo/release-action@v1.8.0
