@@ -33,5 +33,5 @@ jobs:
         with:
           artifacts: "${{ github.workspace }}/Download/*"
           tag: "${{ github.event.inputs.ZIP_NAME }}_${{ env.BUILD_TIME }}"
-          bodyFile: "$GITHUB_WORKSPACE/Download/1.txt"
+          body: "${{ github.event.inputs.ZIP_NAME }}"
           token: ${{ secrets.GITHUB_TOKEN }}
